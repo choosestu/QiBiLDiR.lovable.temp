@@ -1,29 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Vision } from "@/components/sections/Vision";
+import { Focus } from "@/components/sections/Focus";
+import { Status } from "@/components/sections/Status";
+import { Founder } from "@/components/sections/Founder";
+import { Contact } from "@/components/sections/Contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "QiBiLDiR — Building the Operating System for New Home Sales" },
+      {
+        name: "description",
+        content:
+          "QiBiLDiR is an AI-powered real estate platform developing technology to connect the people, processes, and information of residential development into a single intelligent system.",
+      },
+      { property: "og:title", content: "QiBiLDiR — Building the Operating System for New Home Sales" },
+      {
+        property: "og:description",
+        content: "An AI-powered platform connecting residential development teams, projects, and homebuyers.",
+      },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="bg-background text-foreground">
+      <SiteNav />
+      <main>
+        <Hero />
+        <About />
+        <Vision />
+        <Focus />
+        <Status />
+        <Founder />
+        <Contact />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
