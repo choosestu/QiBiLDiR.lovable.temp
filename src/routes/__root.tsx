@@ -77,24 +77,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "QiBiLDiR's corporate website introduces their vision for transforming residential development with an intelligent platform." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "QiBiLDiR's corporate website introduces their vision for transforming residential development with an intelligent platform." },
+      { title: "QiBiLDiR | Residential Development Technology" },
+      {
+        name: "description",
+        content:
+          "QiBiLDiR is a residential development technology company building infrastructure to transform how new home communities are planned, sold, and experienced.",
+      },
+      { name: "author", content: "QiBiLDiR" },
+      { property: "og:title", content: "QiBiLDiR | Residential Development Technology" },
+      {
+        property: "og:description",
+        content:
+          "QiBiLDiR is a residential development technology company building infrastructure to transform how new home communities are planned, sold, and experienced.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "QiBiLDiR's corporate website introduces their vision for transforming residential development with an intelligent platform." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b865d5d9-fa00-404e-86db-f0bc37be2864/id-preview-efed0693--7bb40754-d146-4805-93b6-d601de3c00b7.lovable.app-1780609000427.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b865d5d9-fa00-404e-86db-f0bc37be2864/id-preview-efed0693--7bb40754-d146-4805-93b6-d601de3c00b7.lovable.app-1780609000427.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "QiBiLDiR | Residential Development Technology" },
+      {
+        name: "twitter:description",
+        content:
+          "Technology for the future of residential development. Built from inside the industry.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b865d5d9-fa00-404e-86db-f0bc37be2864/id-preview-efed0693--7bb40754-d146-4805-93b6-d601de3c00b7.lovable.app-1780609000427.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b865d5d9-fa00-404e-86db-f0bc37be2864/id-preview-efed0693--7bb40754-d146-4805-93b6-d601de3c00b7.lovable.app-1780609000427.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

@@ -6,32 +6,33 @@ export function SiteFooter() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid gap-12 md:grid-cols-3">
         <div className="md:col-span-1">
           <Logo className="h-14 md:h-16 w-auto mb-6" />
-          <p className="text-sm text-charcoal-foreground/60 max-w-xs">
-            Building the operating system for new home sales.
+          <p className="text-sm text-charcoal-foreground/60 max-w-xs leading-relaxed">
+            Technology for the residential development industry.
           </p>
         </div>
         <div className="md:col-span-2 grid grid-cols-2 gap-8 text-sm">
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-charcoal-foreground/40 mb-3">Company</h4>
-            <ul className="space-y-2 text-charcoal-foreground/80">
-              <li><a href="#about" className="hover:text-charcoal-foreground">About</a></li>
-              <li><a href="#vision" className="hover:text-charcoal-foreground">Vision</a></li>
-              <li><a href="#founder" className="hover:text-charcoal-foreground">Founder</a></li>
+            <h4 className="text-xs uppercase tracking-widest text-charcoal-foreground/40 mb-4">Company</h4>
+            <ul className="space-y-3 text-charcoal-foreground/80">
+              <li><a href="#about" className="hover:text-charcoal-foreground transition-colors">About</a></li>
+              <li><a href="#vision" className="hover:text-charcoal-foreground transition-colors">Vision</a></li>
+              <li><a href="#focus" className="hover:text-charcoal-foreground transition-colors">Focus</a></li>
+              <li><a href="#founder" className="hover:text-charcoal-foreground transition-colors">Founder</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-charcoal-foreground/40 mb-3">Connect</h4>
-            <ul className="space-y-2 text-charcoal-foreground/80">
-              <li><a href="#contact" className="hover:text-charcoal-foreground">Partner with us</a></li>
-              <li><a href="#status" className="hover:text-charcoal-foreground">Pilot projects</a></li>
+            <h4 className="text-xs uppercase tracking-widest text-charcoal-foreground/40 mb-4">Connect</h4>
+            <ul className="space-y-3 text-charcoal-foreground/80">
+              <li><a href="#contact" className="hover:text-charcoal-foreground transition-colors">Partner with us</a></li>
+              <li><a href="#status" className="hover:text-charcoal-foreground transition-colors">Pilot projects</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between text-xs text-charcoal-foreground/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between text-xs text-charcoal-foreground/40">
           <p>© {new Date().getFullYear()} QiBiLDiR. All rights reserved.</p>
-          <p>An AI-powered platform for residential development.</p>
+          <p className="mt-1 md:mt-0">Residential development technology.</p>
         </div>
       </div>
     </footer>

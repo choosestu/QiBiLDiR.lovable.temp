@@ -12,18 +12,21 @@ import { Contact } from "@/components/sections/Contact";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "QiBiLDiR — Building the Operating System for New Home Sales" },
+      { title: "QiBiLDiR | Residential Development Technology" },
       {
         name: "description",
         content:
-          "QiBiLDiR is an AI-powered real estate platform developing technology to connect the people, processes, and information of residential development into a single intelligent system.",
+          "QiBiLDiR is a residential development technology company building infrastructure to transform how new home communities are planned, sold, and experienced. Proptech for builders and developers.",
       },
-      { property: "og:title", content: "QiBiLDiR — Building the Operating System for New Home Sales" },
+      { name: "keywords", content: "residential development technology, proptech, real estate technology, new home sales technology, development innovation, homebuilder technology" },
+      { property: "og:title", content: "QiBiLDiR | Residential Development Technology" },
       {
         property: "og:description",
-        content: "An AI-powered platform connecting residential development teams, projects, and homebuyers.",
+        content:
+          "Technology for the future of residential development. Built from inside the industry.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://qibildir.com" },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
