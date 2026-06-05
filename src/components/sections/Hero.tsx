@@ -17,7 +17,7 @@ export function Hero() {
         <img
           src={logoAsset.url}
           alt="QiBiLDiR"
-          className="w-full max-w-[520px] mx-auto h-auto mb-14 md:mb-18"
+          className="w-full max-w-[680px] mx-auto h-auto mb-14 md:mb-18"
         />
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl mx-auto font-medium tracking-tight">
