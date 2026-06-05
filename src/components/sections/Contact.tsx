@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
-import { submitContact } from "@/lib/api/contact.functions";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -8,6 +7,8 @@ const schema = z.object({
   email: z.string().trim().email("Enter a valid email").max(255),
   message: z.string().trim().min(1, "Message is required").max(1000),
 });
+
+const WEB3FORMS_KEY = "1d04e46f-1dd2-4d43-884e-2201e905d1cb";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -38,11 +39,29 @@ export function Contact() {
     setStatus("sending");
 
     try {
-      await submitContact({ data: r.data });
-      setStatus("sent");
-      formEl.reset();
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Contact: ${r.data.name}${r.data.company ? ` — ${r.data.company}` : ""}`,
+          from_name: "QiBiLDiR Website",
+          name: r.data.name,
+          email: r.data.email,
+          company: r.data.company || "—",
+          message: r.data.message,
+        }),
+      });
+
+      const json = await res.json();
+      if (json.success) {
+        setStatus("sent");
+        formEl.reset();
+      } else {
+        throw new Error(json.message);
+      }
     } catch (err) {
-      console.error("Contact submission error:", err);
+      console.error("Contact error:", err);
       setStatus("error");
     }
   }
@@ -90,7 +109,7 @@ export function Contact() {
             <p className="text-sm text-charcoal-foreground/70">Thank you — we'll be in touch.</p>
           )}
           {status === "error" && (
-            <p className="text-sm text-destructive">Something went wrong. Please try again or email us directly.</p>
+            <p className="text-sm text-destructive">Something went wrong. Please try again.</p>
           )}
         </form>
       </div>
@@ -98,17 +117,7 @@ export function Contact() {
   );
 }
 
-function Field({
-  name,
-  label,
-  type,
-  error,
-}: {
-  name: string;
-  label: string;
-  type: string;
-  error?: string;
-}) {
+function Field({ name, label, type, error }: { name: string; label: string; type: string; error?: string }) {
   return (
     <div>
       <label htmlFor={name} className="block text-xs uppercase tracking-widest text-charcoal-foreground/50 mb-2">
