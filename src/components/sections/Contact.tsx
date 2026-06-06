@@ -68,12 +68,19 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-28 md:py-40 bg-charcoal text-charcoal-foreground">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20">
+    <section id="contact" className="relative py-20 md:py-28 bg-charcoal text-charcoal-foreground overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.04]" style={{
+        backgroundImage: "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+        backgroundSize: "64px 64px",
+      }} />
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-charcoal-foreground/50 mb-6">Contact</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-light mb-8">
-            Let's start a conversation.
+          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-charcoal-foreground/55 mb-6">
+            <span className="h-px w-8 bg-charcoal-foreground/30" />
+            Contact — 06
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-light mb-6">
+            Let's start a <em className="italic">conversation.</em>
           </h2>
           <p className="text-lg text-charcoal-foreground/70 leading-relaxed max-w-md">
             Interested in learning more about QiBiLDiR? We'd love to connect.

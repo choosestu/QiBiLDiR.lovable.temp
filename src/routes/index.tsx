@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Vision } from "@/components/sections/Vision";
 import { Focus } from "@/components/sections/Focus";
+import { Signature } from "@/components/sections/Signature";
 import { Status } from "@/components/sections/Status";
 import { Founder } from "@/components/sections/Founder";
 import { Contact } from "@/components/sections/Contact";
@@ -42,6 +43,7 @@ function Index() {
         <About />
         <Vision />
         <Focus />
+        <Signature />
         <Status />
         <Founder />
         <Contact />
