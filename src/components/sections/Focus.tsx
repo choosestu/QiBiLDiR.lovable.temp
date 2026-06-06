@@ -1,3 +1,5 @@
+import { SitePlanMotif } from "@/components/Patterns";
+
 const cards = [
   {
     num: "01",
@@ -23,23 +25,49 @@ const cards = [
 
 export function Focus() {
   return (
-    <section id="focus" className="py-28 md:py-40 bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="max-w-3xl mb-18 md:mb-22">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-6">Focus</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05]">What we are building for.</h2>
+    <section id="focus" className="relative py-20 md:py-28 bg-background overflow-hidden">
+      <div className="absolute inset-0 text-foreground/[0.05]">
+        <SitePlanMotif />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid lg:grid-cols-12 gap-10 items-end mb-12 md:mb-16">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-muted-foreground mb-6">
+              <span className="h-px w-8 bg-muted-foreground/40" />
+              Focus — 03
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+              What we are <em className="font-light italic">building for.</em>
+            </h2>
+          </div>
+          <div className="lg:col-span-5">
+            <p className="text-muted-foreground leading-relaxed">
+              Four areas of focus shape every decision — from the people we work with, to the
+              problems we choose to solve, to the long-term posture of the company.
+            </p>
+          </div>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border mt-16">
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
           {cards.map((c) => (
             <div
               key={c.num}
-              className="bg-background p-8 lg:p-10 min-h-[300px] flex flex-col justify-between transition-colors hover:bg-subtle"
+              className="group relative bg-background p-8 lg:p-10 min-h-[280px] flex flex-col justify-between transition-colors hover:bg-subtle"
             >
-              <span className="text-xs font-sans text-accent tracking-widest">{c.num}</span>
+              <div className="flex items-start justify-between">
+                <span className="text-xs font-mono text-accent tracking-widest">{c.num}</span>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/50">
+                  Sheet
+                </span>
+              </div>
               <div>
-                <h3 className="text-2xl md:text-[1.7rem] leading-tight mb-4">{c.title}</h3>
+                <h3 className="text-2xl md:text-[1.6rem] leading-tight mb-3 transition-colors group-hover:text-accent">
+                  {c.title}
+                </h3>
                 <p className="text-muted-foreground leading-relaxed text-[15px]">{c.body}</p>
               </div>
+              <span className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>
