@@ -14,11 +14,6 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal/95 via-charcoal/80 to-charcoal" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-36 pb-24 md:py-36 w-full text-center">
-        <img
-          src={logoAsset.url}
-          alt="QiBiLDiR"
-          className="w-full max-w-[680px] mx-auto h-auto mb-14 md:mb-18"
-        />
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl mx-auto font-medium tracking-tight">
           Infrastructure for the Future of Residential Development.
