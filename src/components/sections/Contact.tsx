@@ -50,6 +50,7 @@ export function Contact() {
           email: r.data.email,
           company: r.data.company || "—",
           message: r.data.message,
+          botcheck: false,
         }),
       });
 
